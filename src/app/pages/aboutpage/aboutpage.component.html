@@ -1,0 +1,37 @@
+
+
+
+
+<!-- <p>cards works!</p> -->
+
+<!-- <body style=background-color:aqua> -->
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-4" *ngFor="let i of about">
+          <div class="card" style="width: 18rem;">
+            <img class="card-image-top" src="../../../assets/images/{{i.images}}" alt="ttt" height="400px">
+            <div class="card-body">
+              <h5 class="card-title">{{i.name}}</h5>
+              <p class="card-text" style="height:80px">{{i.desc}}</p>
+              <!-- <a href="#" class="btn btn-primary">view more</a>   -->
+               <div class="row">
+                <div class="col">
+                <button id=""(click)="gotoHere(i.id)">view more</button>
+              </div>
+              <div class="col">
+                
+              </div>
+              </div>
+            </div>
+          </div>    
+        </div>
+      </div> 
+    
+    </div> 
+    <br> <br>
+
+
+    
+
