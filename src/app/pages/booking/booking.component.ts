@@ -59,7 +59,7 @@ export class BookingComponent {
     }
     
     alert('Submitted Sucessfully')
-     this.router.navigateByUrl('home')
+     this.router.navigateByUrl('/Home')
     
   }
   

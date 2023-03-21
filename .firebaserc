@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "health-and-fitness-576c6": {
+      "hosting": {
+        "demo": [
+          "health-and-fitness-576c6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "health-and-fitness-576c6"
+  }
+}

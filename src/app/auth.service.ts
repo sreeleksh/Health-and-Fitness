@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { signInWithEmailAndPassword } from '@angular/fire/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class AuthService {
     this.fireauth.signInWithEmailAndPassword(email,password).then( () => {
       localStorage.setItem('token','true');
       alert('Signin successful');
-      //  this.router.navigate(['dashboard']);
+        this.router.navigate(['/Home']);
     }, err => {
       alert('something went wrong');
       this.router.navigate(['/Signinpage']);
@@ -41,7 +41,7 @@ export class AuthService {
   logout(){
     this.fireauth.signOut().then( () => {
       localStorage.removeItem('token');
-      this.router.navigate(['/signin']);
+      this.router.navigate(['/Signin']);
     }, err => {
       alert(err.message);
     })

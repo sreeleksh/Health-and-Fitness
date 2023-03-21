@@ -9,20 +9,24 @@ import { SigninpageComponent } from './pages/signinpage/signinpage.component';
 import { SignuppageComponent } from './pages/signuppage/signuppage.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { SinglepageComponent } from './pages/singlepage/singlepage.component';
+ import { AngularFireAuthGuard, loggedIn, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
 
 const routes: Routes = [
   {
-     path:'',component :HomepageComponent
+     path:'Home',component :HomepageComponent,canActivate: [AngularFireAuthGuard]
+  },
+
+  {
+    path:'',redirectTo:'Signup',pathMatch:'full'
+  },
+
+  {
+    path:'About',component :AboutpageComponent,canActivate: [AngularFireAuthGuard]
   },
   {
-    path:'About',component :AboutpageComponent
+    path:'Contact',component :ContactpageComponent,canActivate: [AngularFireAuthGuard]
   },
-  {
-    path:'Contact',component :ContactpageComponent
-  },
-     {
-       path:'',redirectTo:'Signinpage',pathMatch:'full'
-     },
+     
   {
     path:'Signin',component :SigninpageComponent
   },
@@ -36,10 +40,10 @@ const routes: Routes = [
     path:'Booking',component :BookingComponent
   },
   {
-    path:'Services',component :ServicesComponent
+    path:'Services',component :ServicesComponent,canActivate: [AngularFireAuthGuard]
   },
   {
-  path:'Diet',component :DietComponent
+  path:'Diet',component :DietComponent,canActivate: [AngularFireAuthGuard]
   }
 ];
 
